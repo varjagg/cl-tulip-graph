@@ -2,7 +2,7 @@
 (in-package #:bouquet-system)
 
 (asdf:defsystem :bouquet
-    :version "0.3.0"
+    :version "0.4.0"
     :author "Eugene Zaikonnikov"
     :licence "LLGPL"
     :properties ((#:author-email . "viking@funcall.org")

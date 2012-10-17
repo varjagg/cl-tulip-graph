@@ -1,39 +1,41 @@
-		      Bouquet: a graph generator
+		      Cl-Tulip-Graph: a graph generator
 
-Bouquet is a graph description generator written in Common Lisp. The
-package accepts various Lisp objects as nodes and produces graph
-descriptions in .tlp format, which can be later visualized in Tulip
-(see http://www.tulip-software.org/). Tulip clusters and properties
-are supported.
+Cl-Tulip-Graph is a graph description generator written in Common
+Lisp. The package accepts various Lisp objects as nodes and produces
+graph descriptions in .tlp format, which can be later visualized in
+Tulip (see http://www.tulip-software.org/). Tulip clusters and
+properties are supported.
 
-Bouquet is written by Eugene Zaikonnikov, and is distributed under the
-terms of LLGPL (see LICENSE file for details).
+The package is formerly known as bouquet.
+
+Cl-Tulip-Graph is written by Eugene Zaikonnikov, and is distributed
+under the terms of LLGPL (see LICENSE file for details).
 
 
-			   Building Bouquet
+			   Building Cl-Tulip-Graph
 
 Distribution tarball contains .asd system definition file, and several
-.lisp source files. To compile and load Bouquet, launch your
-ASDF-enabled Lisp and perfrom (asdf:oos 'asdf:load-op :bouquet) in the
-REPL.
+.lisp source files. To compile and load Cl-Tulip-Graph, launch your
+ASDF-enabled Lisp and perfrom (asdf:oos 'asdf:load-op :cl-tulip-graph)
+in the REPL.
 
-To test the package, try (bouquet:test).
+To test the package, try (cl-tulip-graph:test).
 
-Bouquet was tested with CMU CL 18e, but is expected to run with other
-mostly-ANSI-conforming Lisps.
+Cl-Tulip-Graph was tested with SBCL 1.0.55, but is expected to run
+with other mostly-ANSI-conforming Lisps.
 
 
-			    Using Bouquet
+			    Using Cl-Tulip-Graph
 
 Below is a short description of package API. To familiarise with Tulip
 concepts, see http://www.tulip-software.org.
 
-Bouquet maintains current graph instance in graph cache which is
-manipulated via set of interface functions. The interface functions
+Cl-Tulip-Graph maintains current graph instance in graph cache which
+is manipulated via set of interface functions. The interface functions
 implicitly use the graph instance currently registered in the graph
 cache: for most cases, it is more convenient and succinct.
 
-The interface functions (exported from BOUQUET package) are:
+The interface functions (exported from CL-TULIP-GRAPH package) are:
 
 (NEW-GRAPH): Instantiates a new graph and stores it in the graph
 cache. Also, default "Label" property is created for node labels.

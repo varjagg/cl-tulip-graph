@@ -1,18 +1,14 @@
-(defpackage #:bouquet-system (:use #:asdf #:cl))
-(in-package #:bouquet-system)
+(defpackage #:cl-tulip-graph-system (:use #:asdf #:cl))
+(in-package #:cl-tulip-graph-system)
 
-(asdf:defsystem :bouquet
-    :version "0.4.0"
+(asdf:defsystem :cl-tulip-graph
+    :version "0.4.1"
     :author "Eugene Zaikonnikov"
     :licence "LLGPL"
-    :properties ((#:author-email . "viking@funcall.org")
-		 ((#:albert #:output-dir) . "albert-docs/")
-		 ((#:albert #:presentation #:funcallable #:calledby) t)
-		 ((#:albert #:presentation #:class #:related-methods) t)
-		 ((#:albert #:docbook #:cvs-viewurl) . "http://cvs.sourceforge.net/cgi-bin/viewcvs.cgi/bouquet/bouquet/")
-		 ((#:albert #:docbook #:cvs-tag) . "HEAD"))
+    :description "A graph generator that produces files readable by Tulip graph visualizer"
+    :properties ((#:author-email . "eugene@funcall.org"))
     :components ((:file "package")
-		 (:file "bouquet" :depends-on ("package"))
-		 (:file "tests" :depends-on ("bouquet"))))
+		 (:file "main" :depends-on ("package"))
+		 (:file "tests" :depends-on ("main"))))
 
 

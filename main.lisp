@@ -1,9 +1,9 @@
-;;;Copyright (C) 2004,2012 by Eugene Zaikonnikov <viking@funcall.org>
+;;;Copyright (C) 2004,2012 by Eugene Zaikonnikov <eugene@funcall.org>
 ;;;This file is distributed under the terms of LLGPL license (see LICENSE for details)
 
 ;;; Produces Tulip (.tlp format) graph descriptions
 
-(in-package #:org.funcall.bouquet)
+(in-package #:org.funcall.cl-tulip-graph)
 
 (eval-when (:load-toplevel)
 (defvar *current-graph*)

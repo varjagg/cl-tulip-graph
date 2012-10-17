@@ -1,4 +1,4 @@
-(in-package #:org.funcall.bouquet)
+(in-package #:org.funcall.cl-tulip-graph)
 
 (defun test ()
   "Small test for the package"

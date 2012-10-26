@@ -1,0 +1,7 @@
+2012-10-25  Eugene Zaikonnikov  <eugene@funcall.org>
+
+	* main.lisp: Now pushing :cl-tulip-graph to *FEATURES*
+
+	* main.lisp: Migrated to v 2.0 format
+	
+	* main.lisp: Added date stamp option

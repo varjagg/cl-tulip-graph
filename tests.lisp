@@ -26,3 +26,4 @@
 	unless (node subclass) do
 	(render-subclasses subclass)
 	(register-edge (node subclass) (node class))))
+

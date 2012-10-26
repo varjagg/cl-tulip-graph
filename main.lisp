@@ -17,6 +17,8 @@
 (defvar *graph-properties*)
 
 (defvar *object-count* 0)
+
+(pushnew :cl-tulip-graph *features*)
 )
 
 (defgeneric register-node (node)
@@ -49,7 +51,13 @@
    (properties :reader properties
 	       :initarg :properties
 	       :documentation "Lookup by strings"
-	       :initform (make-hash-table :test #'equal)))
+	       :initform (make-hash-table :test #'equal))
+   (date :accessor date
+	 :documentation "Date of the generated document"
+	 :initform (multiple-value-bind 
+			 (sec min hour day month year)
+		       (get-decoded-time)
+		     (format nil "~a, ~2,'0d-~d-~d" day month year)))
   (:documentation "Contains the data sufficient to render a graph"))
 
 (defun current-graph ()
@@ -228,10 +236,13 @@
 		 (declare (ignore key))
 		 (push val all-properties))
 	     *graph-properties*)
+    (format stream "(tlp \"2.0\"~%")
+    (format stream "(date \"~A\")~%" (date *current-graph*))
     (format stream "(nodes~{ ~D~})~%" all-nodes)
     (format stream "~{~S~%~}" all-edges)
     (format stream "~{~S~%~}" all-clusters)
-    (format stream "~{~S~%~}" all-properties)))
+    (format stream "~{~S~%~}" all-properties)
+    (format stream ")~%")))
 
 
 (defmethod label (object value)
@@ -241,6 +252,5 @@
   (call-next-method object (symbol-name value)))
 
 (defun register-node-unless-exists (node)
-  (if (node node)
-      (node node)
-      (register-node node)))
+  (cond ((node node))
+	(t (register-node node))))

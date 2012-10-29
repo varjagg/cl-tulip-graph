@@ -57,7 +57,7 @@
 	 :initform (multiple-value-bind 
 			 (sec min hour day month year)
 		       (get-decoded-time)
-		     (format nil "~a, ~2,'0d-~d-~d" day month year)))
+		     (format nil "~2,'0d-~d-~d" day month year))))
   (:documentation "Contains the data sufficient to render a graph"))
 
 (defun current-graph ()

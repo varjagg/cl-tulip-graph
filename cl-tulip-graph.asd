@@ -2,7 +2,7 @@
 (in-package #:cl-tulip-graph-system)
 
 (asdf:defsystem :cl-tulip-graph
-    :version "0.4.1"
+    :version "0.4.2"
     :author "Eugene Zaikonnikov"
     :licence "LLGPL"
     :description "A graph generator that produces files readable by Tulip graph visualizer"

@@ -5,7 +5,7 @@
 
 (in-package #:org.funcall.cl-tulip-graph)
 
-(eval-when (:load-toplevel)
+(eval-when (:load-toplevel :execute)
 (defvar *current-graph*)
 
 (defvar *graph-nodes*)
